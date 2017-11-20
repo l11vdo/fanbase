@@ -1,0 +1,62 @@
+<div ng-controller="perfdetailsCntrl" ng-init="get();">
+ <form name="editPerformerDetail" role="form">
+   <legend>{{performerName()}} - Performer Details</legend>
+    <fieldset>
+        <div class="form-group has-success has-feedback">
+          <label>Act name</label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="Name of your act"
+                 name="fb_name"
+                 ng-model="perfdetail.fb_name"
+                 focus required/>
+        </div>
+
+        <div class="form-group has-success has-feedback">
+          <label>Act type</label>
+          <select class="form-control"
+                  placeholder="Type of act"
+                  name="fb_type"
+                  ng-model="perfdetail.fb_type"
+                  ng-options="x for x in types"
+                  required>
+          </select>
+        </div>
+
+        <div class="form-group has-success has-feedback">
+          <label>Act status</label>
+          <select class="form-control"
+                  placeholder="Active / inactive"
+                  name="fb_type"
+                  ng-model="perfdetail.fb_status"
+                  ng-options="x for x in stati"
+                  required>
+          </select>
+        </div>
+
+        <div class="form-group has-success has-feedback">
+          <label>Strapline</label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="1 line act intro"
+                 name="fb_strapline"
+                 ng-model="perfdetail.fb_strapline"/>
+        </div>
+
+        <div class="form-group has-success has-feedback">
+          <label>About {{fb_name}}</label>
+          <textarea type="text"
+                    class="form-control fb_text"
+                    placeholder="Describe your act"
+                    name="fb_descr"
+                    ng-model="perfdetail.fb_descr"
+                    required>
+          </textarea>
+        </div>
+      </fieldset>
+
+   <br />
+   <br />
+
+  </form>
+</div>

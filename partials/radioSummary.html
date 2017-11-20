@@ -1,0 +1,35 @@
+<div class="fb_summary fb_pad" ng-style="{height: (summaryHeight + 'px')}">
+    <div style="width: 100%; text-align: center; margin: 5px 0px 10px 0px;;">
+        <span class="fb_titleLabel">{{trackDetail.fb_title}}</span><br>
+        <span class="fb_titleLabel">{{trackDetail.fb_name}}</span><br>
+        <span class="fb_titleLabel">({{trackDetail.fb_type}})</span>
+    </div>
+    <table style="width:100%;">
+        <tr>
+            <td>
+                <div id="fb_img_container">
+                    <div class="fb_radio_image" style="background-image:url('{{trackDetail.fb_photo}}');background-size:cover;">
+                        <a class="fb_news_img_link" ng-click="fullSummary();">
+                            <i class="fa fa-list fa-3x"></i>
+                        </a>
+                    </div>
+                </div>
+            </td>
+            <td style="padding:5px;text-align:left; vertical-align:top;">
+                <span class="fb_searchLabel">Radio Tracks</span>
+                <span>{{trackDetail.fb_track_count}}</span><br>
+                <span class="fb_searchLabel">Media Links</span>
+                <span>{{trackDetail.fb_link_count}}</span><br>
+                <span class="fb_searchLabel">News Stories</span>
+                <span>{{trackDetail.fb_link_count}}</span><br>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <span class="fb_searchLabel">Strapline</span>
+    <span>{{trackDetail.fb_strapline}}</span><br><br>
+    <span class="fb_searchLabel">About {{trackDetail.fb_name}}</span><br>
+    <span>{{trackDetail.fb_descr}}</span><br>
+
+    <br><br><br>
+</div>

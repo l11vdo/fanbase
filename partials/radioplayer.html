@@ -1,0 +1,13 @@
+<div ng-controller="playerCntrl" ng-init="getRadio();">
+    <sound-manager></sound-manager>
+    <div ui-content-for="title">
+        <span>{{fb_bannerTitle}}</span>
+    </div>
+    <div id="fb_homeplayer">
+        <div ng-if="trackList.length>0" ng-include="'partials/audioPlayer.html'"></div>
+    </div>
+    <div class="fb_radioInfo">
+        <div ng-show="trackList.length>0 && gotPerformer() && summaryLoad" ng-include="'partials/radioSummary.html'" class="fade-in-out"></div>
+    </div>
+    <br />
+</div>

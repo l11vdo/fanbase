@@ -1,0 +1,77 @@
+<div ng-controller="locationCntrl" ng-init="persGet()">
+    <form name="listLocationsForm" role="form">
+        <legend>{{profile_name()}} - Location Details</legend>
+        <br />
+
+        <table class="table table-striped fb_listTbl">
+            <tr ng-repeat="location in locationList" class="form-group">
+                <td>
+                    <input type="checkbox" ng-model="location.fb_selected">
+                </td>
+                <td>
+                    <span>{{location.fb_type}}</span>
+                </td>
+                <td>
+                    <span ng-if="location.fb_type=='County'">{{location.fb_county}}</span>
+                    <span ng-if="location.fb_type=='Town'">{{location.fb_town}}</span>
+                </td>
+            </tr>
+        </table>
+
+        <div ng-hide="addrow">
+            <table class="sublistButtons">
+                <tr>
+                    <td>
+                        <a href="javascript:void(0)" ng-click="init();"><i class="fa fa-plus-circle fa-lg fa-2x text-success"></i></a>
+                    </td>
+                    <td ng-show="anySelected(locationList)==true">
+                        <a href="javascript:void(0)" ng-click="remove();"><i class="fa fa-minus-circle fa-lg fa-2x text-danger"></i></a>
+                    </td>
+                </tr>
+            </table>
+
+            <br />
+            <br />
+
+        </div>
+    </form>
+
+    <form name="editLocationForm" role="form" ng-show="addrow">
+        <hr>
+        <div class="form-group has-success has-feedback">
+            <label>Area Type</label>
+            <select class="form-control" placeholder="County or City" name="fb_type" ng-model="location.fb_type" ng-options="x for x in location_types"
+                required focus>
+          </select>
+        </div>
+
+        <div class="form-group has-success has-feedback" ng-show="location.fb_type=='County'">
+            <label>County</label>
+            <div id="scrollable-dropdown-menu">
+                <input class="form-control" type="text" ng-model="location.fb_county" typeahead="county.county for county in countyList | filter:$viewValue | limitTo:8">
+            </div>
+        </div>
+
+        <div class="form-group has-success has-feedback" ng-show="location.fb_type=='Town'">
+            <label>Town / City</label>
+            <div id="scrollable-dropdown-menu">
+                <input class="form-control" type="text" ng-model="location.fb_town" typeahead="town.town for town in townList | filter:$viewValue | limitTo:8">
+            </div>
+        </div>
+
+        <table class="listButtons ">
+            <tr>
+                <td>
+                    <button class="btn btn-default btn-block btn-sm" type="submit " ng-click="add();" data-ng-disabled="location.fb_type=='' || (location.fb_county=='' && location.fb_town=='')">
+          <i class="fa fa-check fa-lg fa-2x text-success "></i>
+          </button>
+                </td>
+                <td>
+                    <button class="btn btn-default btn-block btn-sm " ng-click="addrow=false; ">
+          <i class="fa fa-close fa-lg fa-2x text-danger "></i>
+          </button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

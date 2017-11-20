@@ -1,0 +1,113 @@
+<div ng-controller="trackCntrl" ng-init="get()">
+    <form name="listTracksForm" role="form">
+        <legend>Tracks for {{performerName()}}</legend>
+
+        <table class="table table-striped fb_listTbl">
+            <tr ng-repeat="track in trackList" class="form-group">
+                <td>
+                    <input type="checkbox" ng-model="track.fb_selected">
+                </td>
+                <td>
+                    <i ng-show="track.fb_url_type=='External'" class="fa fa-external-link fa-sm text-primary"></i>
+                    <i ng-show="track.fb_url_type=='Upload'" class="fa fa-upload fa-sm text-primary"></i> &nbsp;&nbsp;
+                    <span>{{track.fb_title}}</span>
+                </td>
+                <td>
+                    <a ng-hide="track.isPlaying" href="javascript:void(0)" ng-click="buttonPlay($index);"><i class="fa fa-play-circle fa-lg fa-2x text-primary"></i></a>
+                    <a ng-show="track.isPlaying" href="javascript:void(0)" ng-click="buttonStop($index);"><i class="fa  fa-stop-circle fa-lg fa-2x text-primary"></i></a>
+                </td>
+            </tr>
+        </table>
+
+        <div ng-hide="addrow">
+            <table class="sublistButtons">
+                <tr>
+                    <td ng-hide="trackList.length>=3">
+                        <a href="javascript:void(0)" ng-click="init()"><i class="fa fa-plus-circle fa-lg fa-2x text-success"></i></a>
+                    </td>
+                    <td ng-show="anySelected(trackList)==true">
+                        <a href="javascript:void(0)" ng-click="remove()"><i class="fa fa-minus-circle fa-lg fa-2x text-danger"></i></a>
+                        <td ng-show="trackList.length>=3"></td>
+                    </td>
+                </tr>
+            </table>
+
+            <br />
+            <br />
+
+        </div>
+    </form>
+
+    <form name="editTracksForm" role="form" ng-show="addrow">
+        <hr>
+        <legend>Add a track</legend>
+        <div class="form-group has-success has-feedback">
+            <label>Track Title</label>
+            <input type="text" class="form-control" placeholder="Title" name="fb_title" ng-model="track.fb_title" required/>
+        </div>
+
+        <div class="form-group has-success has-feedback">
+          <label>About {{track.fb_title}}</label>
+          <textarea type="text"
+                    class="form-control fb_text"
+                    placeholder="Tell us about your track"
+                    name="fb_descr"
+                    ng-model="track.fb_descr"
+                    data-ng-disabled="track.fb_title==''"
+                    required>
+          </textarea>
+        </div>
+
+        <div class="form-group has-success has-feedback">
+            <label>Track Type</label>
+            <select class="form-control" placeholder="Original / cover" name="fb_track_type" ng-model="track.fb_track_type" ng-options="x for x in track_types">
+          </select>
+        </div>
+
+        <div class="form-group has-success has-feedback">
+            <label>URL Type</label>
+            <select class="form-control" placeholder="Upload / External" name="fb_url_type" ng-model="track.fb_url_type" ng-options="x for x in url_types">
+          </select>
+        </div>
+
+        <div ng-show="track.fb_url_type=='External'">
+            <div class="form-group has-success has-feedback">
+                <label>Address / URL</label>
+                <input type="text" class="form-control" placeholder="External URL / Address" name="fb_track_url" ng-model="track.fb_track_url"
+                    data-ng-disabled="track.fb_title==''" />
+            </div>
+        </div>
+
+        <div ng-show="track.fb_url_type=='Upload'" class="form-group has-success has-feedback">
+            <table>
+                <tr>
+                    <td style="width:80%">
+                        <h4 ng-show="track.fb_track_url==''" class="text-danger">No Track Loaded</h4>
+                        <h4 ng-show="track.fb_track_url!=''" class="text-success">{{track.fb_track_url}}</h4>
+                    </td>
+                    <td>
+                        <button class="fileUpload btn btn-default btn-sm">
+                            <i class="fa fa-upload fa-lg fa-2x text-primary"></i>
+                            <input fb-upload type="file" id="fileInput" accept="audio/*" class="upload" data-ng-disabled="track.fb_title==''" />
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <table class="listButtons">
+            <tr>
+                <td>
+                    <button class="btn btn-default btn-block btn-sm" type="submit" ng-click="add();" data-ng-disabled="track.fb_title=='' || track.fb_url_type=='' || (track.fb_url_type=='External' && track.fb_track_url=='') || (track.fb_url_type=='Upload' && track.fb_track_base64=='')">
+                            <i class="fa fa-check fa-lg fa-2x text-success"></i>
+                        </button>
+                </td>
+                <td>
+                    <button class="btn btn-default btn-block btn-sm" ng-click="addrow=false;">
+                            <i class="fa fa-close fa-lg fa-2x text-danger"></i>
+                        </button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

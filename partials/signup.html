@@ -1,0 +1,85 @@
+<div class="fb-scrollable">
+    <div class="scrollable-content section fb_pad">
+        <div ng-controller="signupCntrl" ng-init="init()">
+            <br />
+            <form name="signupForm" role="form">
+                <fieldset>
+                    <div ng-show="verify_step!='identity'">
+                        <legend>{{fb_name}} - Sign Up</legend>
+                        <div class="form-group has-success has-feedback">
+                            <label>Primary Email</label>
+                            <input type="email" class="form-control" placeholder="Enter email" name="fb_email" ng-model="signup.fb_email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
+                                ng-change="init()" required focus/>
+                        </div>
+                    </div>
+
+                    <div ng-hide="signup.fb_email==null || signup.fb_email==''">
+                        <div ng-show="verify_step=='initiate'" ng-class="{'slide-left': fb_transition==='slide-left', 'slide-right': fb_transition==='slide-right'}">
+                            <button class="btn fb_btn_primary fb_primaryLabel" ng-click="verify()">
+                            Verify e-mail... </button>
+                        </div>
+                        <div ng-show="verify_step=='validate'" ng-class="{'slide-left': fb_transition==='slide-left', 'slide-right': fb_transition==='slide-right'}">
+                            <div class="form-group has-success has-feedback">
+                                <span>Check your e-mail, enter the security code and click 'Validate code...'</span>
+                                <table>
+                                    <tr>
+                                        <td width='60%'>
+                                            <div class="form-group" style='margin-right:10px;'>
+                                                <input type="text" class="form-control" placeholder="Security code" ng-model="signup.fb_validation_code" focus />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="btn fb_btn_primary">
+                                                <a ng-click="validate()" class="fb_primaryLabel" data-ng-disabled="signup.fb_validation_code==''">
+                                                    Validate code...
+                                                    </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <br />
+
+                        <div ng-show="verify_step=='password'" ng-class="{'slide-left': fb_transition==='slide-left', 'slide-right': fb_transition==='slide-right'}">
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" class="form-control" placeholder="Password" name="fb_pwd" ng-pattern="passwordStrength" ng-model="signup.fb_pwd" />
+                            </div>
+                            <div class="bg-info text-danger" ng-show="signup.fb_pwd!='' && signup.fb_pwd!=original_pwd && signupForm.fb_pwd.$error.pattern">
+                                Password should be at least 8 characters long and should contain one number,one character and one special character
+                            </div>
+                            <div class="bg-info text-danger" ng-show="signup.fb_pwd!='' && signup.fb_pwd!=signup.fb_pwd2 && signup.fb_pwd2!=''">
+                                Passwords must match
+                            </div>
+                            <div class="form-group">
+                                <label>Confirm Password</label>
+                                <input type="password" class="form-control" placeholder="Password again" ng-model="signup.fb_pwd2" password-match="signup.fb_pwd" ng-change="check();" />
+                            </div>
+                            <div ng-hide="signup.fb_pwd=='' || signupForm.fb_pwd.$error.pattern || signupForm.fb_pwd.$error.required || signup.fb_pwd!=signup.fb_pwd2">
+                                <br />
+                                <div class="btn btn-default btn-block fb_btn_menu" ng-click="save();">
+                                    <table style="width:100%;">
+                                        <tr>
+                                            <td style="width:30%;">
+                                                <i class="fa fa-user fa-lg fa-2x fb_profileGlyph"></i>
+                                            </td>
+                                            <td style="text-align:left;">
+                                                <span class="fb_profileLabel">Identity Details</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <div ng-include="idForm" ng-show="verify_step=='identity'" ng-class="{'slide-left': fb_transition==='slide-left', 'slide-right': fb_transition==='slide-right'}"></div>
+            <br />
+            <br />
+            <br />
+        </div>
+    </div>
+</div>

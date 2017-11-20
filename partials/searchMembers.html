@@ -1,0 +1,34 @@
+<div ng-controller="membersCntrl" class="modal" ui-if="modalsearch" ui-shared-state="modalsearch">
+  <div class="modal-backdrop in"></div>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <table class="fb_memberSearch">
+          <tr>
+            <td>
+              <input type="text" class="form-control" placeholder="Member name" name="searchStr" ng-model="fb_search.searchStr" focus/>
+            </td><td>
+              <a href="javascript:void(0)" ng-click="find();"><i class="fa fa-search fa-lg fa-2x text-primary"></i></a>
+            </td><td>
+              <button class="close" ui-turn-off="modalsearch"><i class="fa fa-close fa-lg"></i></button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-body">
+        <div ng-repeat="member in memberList" class="btn btn-default btn-block" ng-click="add($index); Ui.turnOff('modalsearch');">
+          <table class="fb_searchMemberTbl">
+            <tr>
+              <td>
+                <img ng-src="{{member.fb_photo}}">
+              </td>
+              <td>
+                <span class="text-primary"><strong>{{member.fb_name}}</strong></span>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

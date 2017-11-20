@@ -1,0 +1,19 @@
+<div class="fb_homeSearchBar" fb-search-bar-setup ng-style="searchBarStyle">
+    <table>
+        <tr>
+            <td ng-style="searchBarCol1">
+                <input type="text"
+                       class="form-control"
+                       placeholder="Lookup Performer / Act"
+                       name="performerSearch"
+                       ng-model="$parent.performerSearch"
+                       ng-style="searchBarInput"/>
+            </td>
+            <td ng-style="searchBarCol2">
+                <a class="fb_linkGlyph" ui-turn-on="modalsearch">
+                    <i class="fa fa-search fa-lg fa-2x"></i>
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>
