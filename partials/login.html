@@ -1,0 +1,39 @@
+<div ui-content-for="title">
+  <span>FanBase Login</span>
+</div>
+
+<div ng-init="login();"></div>
+<div class="fb_scrollable">
+  <div class="scrollable-content section fb_pad">
+
+    <form name="loginForm" role="form">
+      <fieldset>
+        <legend>Login</legend>
+        <div class="form-group has-success has-feedback">
+          <label>Email</label>
+          <input type="email" class="form-control" placeholder="Enter email" name="fb_email" ng-model="person.fb_email" required focus/>
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control" placeholder="Password" name="fb_pwd" ng-model="person.fb_pwd" required/>
+        </div>
+      </fieldset>
+
+      <br>
+
+      <div class="form-group">
+        <p>Don't have an account? <a href="#/signup" class="text-primary">Signup</a></p>
+      </div>
+
+      <button class="btn fb_btn_primary btn-block" type="submit" ng-click="doLogin(person)" data-ng-disabled="loginForm.$invalid">
+      Login
+      </button>
+
+    </form>
+    <br />
+    <br />
+    <br />
+
+  </div>
+</div>

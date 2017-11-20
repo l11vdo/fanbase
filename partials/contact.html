@@ -1,0 +1,75 @@
+<div ng-controller="contactCntrl" ng-init="get()">
+  <form name="listContactsForm" role="form">
+    <legend>{{profile_name()}} - Contact Details</legend>
+    <br />
+
+    <table class="table table-striped fb_listTbl">
+      <tr ng-repeat="contact in contactList" class="form-group">
+        <td>
+          <input type="checkbox" ng-model="contact.fb_selected">
+        </td>
+        <td>
+          <span>{{contact.fb_contact_type}}</span>
+        </td>
+        <td>
+          <span>{{contact.fb_contact_detail}}</span>
+        </td>
+      </tr>
+    </table>
+
+    <div ng-hide="addrow">
+      <table class="sublistButtons">
+        <tr>
+          <td ng-hide="contactList.length>=3">
+            <a href="javascript:void(0)" ng-click="init();"><i class="fa fa-plus-circle fa-lg fa-2x text-success"></i></a>
+          </td>
+          <td ng-show="anySelected(contactList)==true">
+            <a href="javascript:void(0)" ng-click="remove();"><i class="fa fa-minus-circle fa-lg fa-2x text-danger"></i></a>
+            <td ng-show="contactList.length>=3"></td>
+          </td>
+        </tr>
+      </table>
+
+      <br />
+      <br />
+
+    </div>
+  </form>
+
+  <form name="editContactsForm" role="form" ng-show="addrow">
+    <hr>
+    <div class="form-group has-success has-feedback">
+      <label>Contact Method</label>
+      <select class="form-control" placeholder="Contact method" name="fb_contact_type" ng-model="contact.fb_contact_type" ng-options="x for x in contact_types"
+        required focus>
+          </select>
+    </div>
+
+    <div class="form-group has-success has-feedback" ng-hide="contact.fb_contact_type=='Email (other)'">
+      <label>Phone number</label>
+      <input type="text" class="form-control" placeholder="Your phone number" name="fb_contact_detail" ng-model="contact.fb_contact_detail"
+        data-ng-disabled="contact.fb_contact_type==''" />
+    </div>
+
+    <div class="form-group has-success has-feedback" ng-show="contact.fb_contact_type=='Email (other)'">
+      <label>Email address</label>
+      <input type="email" class="form-control" placeholder="Your email address" name="fb_contact_detail" ng-model="contact.fb_contact_detail"
+        focus data-ng-disabled="contact.fb_contact_type==''" />
+    </div>
+
+    <table class="listButtons">
+      <tr>
+        <td>
+          <button class="btn btn-default btn-block btn-sm" type="submit" ng-click="add();" data-ng-disabled="contact.fb_contact_type=='' || contact.fb_contact_detail==''">
+          <i class="fa fa-check fa-lg fa-2x text-success"></i>
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-default btn-block btn-sm" ng-click="addrow=false;">
+          <i class="fa fa-close fa-lg fa-2x text-danger"></i>
+          </button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>

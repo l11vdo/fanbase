@@ -1,0 +1,315 @@
+Alternative	Alternative Rock
+Alternative	Art Punk
+Alternative	College Rock
+Alternative	Crossover Thrash
+Alternative	Crust Punk
+Alternative	Experimental Rock
+Alternative	Folk Punk
+Alternative	Goth / Gothic Rock
+Alternative	Grunge
+Alternative	Hard Rock
+Alternative	Hardcore Punk
+Alternative	Indie Rock
+Alternative	Lo-fi
+Alternative	New Wave
+Alternative	Progressive Rock
+Alternative	Punk
+Alternative	Shoegaze
+Alternative	Steampunk
+Blues	Acoustic Blues
+Blues	Chicago Blues
+Blues	Classic Blues
+Blues	Contemporary Blues
+Blues	Country Blues
+Blues	Delta Blues
+Blues	Electric Blues
+Blues	Ragtime Blues
+Children’s Music	Lullabies
+Children’s Music	Sing-Along
+Children’s Music	Stories
+Christian & Gospel	CCM
+Christian & Gospel	Christian & Gospel
+Christian & Gospel	Christian Metal
+Christian & Gospel	Christian Pop
+Christian & Gospel	Christian Rap
+Christian & Gospel	Christian Rock
+Christian & Gospel	Classic Christian
+Christian & Gospel	Contemporary Gospel
+Christian & Gospel	Gospel
+Christian & Gospel	Praise & Worship
+Christian & Gospel	Qawwali
+Christian & Gospel	Southern Gospel
+Christian & Gospel	Traditional Gospel
+Classical	Avant-Garde
+Classical	Baroque
+Classical	Chamber Music
+Classical	Chant
+Classical	Choral
+Classical	Classical Crossover
+Classical	Contemporary Classical
+Classical	Early Music
+Classical	Expressionist
+Classical	High Classical
+Classical	Impressionist
+Classical	Medieval
+Classical	Minimalism
+Classical	Modern Composition
+Classical	Opera
+Classical	Orchestral
+Classical	Renaissance
+Classical	Romantic
+Classical	Wedding Music
+Comedy	Novelty
+Comedy	Standup Comedy
+Comedy	Vaudeville
+Commercial	Jingles
+Commercial	TV Themes
+Country	Alternative Country
+Country	Americana
+Country	Bluegrass
+Country	Contemporary Bluegrass
+Country	Contemporary Country
+Country	Country Gospel
+Country	Country Pop
+Country	Honky Tonk
+Country	Outlaw Country
+Country	Traditional Bluegrass
+Country	Traditional Country
+Country	Urban Cowboy
+Dance	Breakbeat / Breakstep
+Dance	Breakcore
+Dance	Brostep
+Dance	Chillstep
+Dance	Club / Club Dance
+Dance	Deep House
+Dance	Dubstep
+Dance	Electro House
+Dance	Electroswing
+Dance	Exercise
+Dance	Future Garage
+Dance	Garage
+Dance	Glitch Hop
+Dance	Glitch Pop
+Dance	Grime
+Dance	Hard Dance
+Dance	Hardcore
+Dance	Hi-NRG / Eurodance
+Dance	Horrorcore
+Dance	House
+Dance	Jackin House
+Dance	Jungle / Drum’n’bass
+Dance	Liquid Du
+Dance	Regstep
+Dance	Speedcore
+Dance	Techno
+Dance	Trance
+Dance	Trap
+Easy Listening	Bop
+Easy Listening	Lounge
+Easy Listening	Swing
+Electronic	2-Step
+Electronic	Ambient
+Electronic	Bassline
+Electronic	Chillwav
+Electronic	Chiptune
+Electronic	Crunk
+Electronic	Downtempo
+Electronic	Drum & Bass
+Electronic	Electro
+Electronic	Electronic Rock
+Electronic	Electronica
+Electronic	Electro-swing
+Electronic	Hardstyle
+Electronic	IDM/Experimental
+Electronic	Industrial
+Electronic	Trip Hop
+Hip-Hop/Rap	Alternative Rap
+Hip-Hop/Rap	Bounce
+Hip-Hop/Rap	Dirty South
+Hip-Hop/Rap	East Coast Rap
+Hip-Hop/Rap	Gangsta Rap
+Hip-Hop/Rap	Hardcore Rap
+Hip-Hop/Rap	Hip-Hop
+Hip-Hop/Rap	Latin Rap
+Hip-Hop/Rap	Old School Rap
+Hip-Hop/Rap	Rap
+Hip-Hop/Rap	Turntablism
+Hip-Hop/Rap	Underground Rap
+Hip-Hop/Rap	West Coast Rap
+Holiday	Chanukah
+Holiday	Christmas
+Holiday	Christmas: Children’s
+Holiday	Christmas: Classic
+Holiday	Christmas: Classical
+Holiday	Christmas: Comedy
+Holiday	Christmas: Jazz
+Holiday	Christmas: Modern
+Holiday	Christmas: Pop
+Holiday	Christmas: R&B
+Holiday	Christmas: Religious
+Holiday	Christmas: Rock
+Holiday	Easter
+Holiday	Halloween
+Holiday	Holiday: Other
+Holiday	Thanksgiving
+Instrumental	March
+Jazz	Acid Jazz
+Jazz	Avant-Garde Jazz
+Jazz	Bebop
+Jazz	Big Band
+Jazz	Blue Note
+Jazz	Contemporary Jazz
+Jazz	Cool
+Jazz	Crossover Jazz
+Jazz	Dixieland
+Jazz	Ethio-jazz
+Jazz	Fusion
+Jazz	Gypsy Jazz
+Jazz	Hard Bop
+Jazz	Latin Jazz
+Jazz	Mainstream Jazz
+Jazz	Ragtime
+Jazz	Smooth Jazz
+Jazz	Trad Jazz
+J-Pop	J-Punk
+J-Pop	J-Rock
+J-Pop	J-Ska
+J-Pop	J-Synth
+Latin	Alternativo & Rock Latino
+Latin	Argentine tango
+Latin	Baladas y Boleros
+Latin	Bossa Nova
+Latin	Brazilian
+Latin	Contemporary Latin
+Latin	Cumbia
+Latin	Flamenco / Spanish Flamenco
+Latin	Latin Jazz
+Latin	Nuevo Flamenco
+Latin	Pop Latino
+Latin	Portuguese fado
+Latin	Raíces
+Latin	Reggaeton y Hip-Hop
+Latin	Regional Mexicano
+Latin	Salsa y Tropical
+New Age	Environmental
+New Age	Healing
+New Age	Meditation
+New Age	Nature
+New Age	Relaxation
+New Age	Travel
+Pop	Adult Contemporary
+Pop	Britpop
+Pop	Bubblegum Pop
+Pop	Chamber Pop
+Pop	Dance Pop
+Pop	Dream Pop
+Pop	Electro Pop
+Pop	Orchestral Pop
+Pop	Pop Punk
+Pop	Pop/Rock
+Pop	Power Pop
+Pop	Soft Rock
+Pop	Synthpop
+Pop	Teen Pop
+R&B/Soul	Contemporary R&B
+R&B/Soul	Disco
+R&B/Soul	Doo Wop
+R&B/Soul	Funk
+R&B/Soul	Modern Soul
+R&B/Soul	Motown
+R&B/Soul	Neo-Soul
+R&B/Soul	Northern Soul
+R&B/Soul	Psychedelic Soul
+R&B/Soul	Quiet Storm
+R&B/Soul	Soul
+R&B/Soul	Soul Blues
+R&B/Soul	Southern Soul
+Reggae	2-Tone
+Reggae	Dancehall
+Reggae	Dub
+Reggae	Roots Reggae
+Reggae	Ska
+Rock	Acid Rock
+Rock	Adult Alternative
+Rock	Adult-Oriented Rock
+Rock	Afro Punk
+Rock	Alternative Rock
+Rock	American Trad Rock
+Rock	Anatolian Rock
+Rock	Arena Rock
+Rock	Art Rock
+Rock	Blues-Rock
+Rock	British Invasion
+Rock	Cock Rock
+Rock	Death Metal / Black Metal
+Rock	Doom Metal
+Rock	Glam Rock
+Rock	Gothic Metal
+Rock	Grind Core
+Rock	Hair Metal
+Rock	Hard Rock
+Rock	Jam Bands
+Rock	Math Metal
+Rock	Math Rock
+Rock	Metal
+Rock	Metal Core
+Rock	Noise Rock
+Rock	Post Punk
+Rock	Progressive Metal
+Rock	Prog-Rock/Art Rock
+Singer/Songwriter	Alternative Folk
+Singer/Songwriter	Contemporary Folk
+Singer/Songwriter	Contemporary Singer/Songwriter
+Singer/Songwriter	Folk-Rock
+Singer/Songwriter	Indie Folk
+Singer/Songwriter	Love Song
+Singer/Songwriter	New Acoustic
+Singer/Songwriter	Traditional Folk
+Soundtrack	Foreign Cinema
+Soundtrack	Movie Soundtrack
+Soundtrack	Musicals
+Soundtrack	Original Score
+Soundtrack	Soundtrack
+Soundtrack	TV Soundtrack
+Tex-Mex / Tejano	Chicano
+Tex-Mex / Tejano	Classic
+Tex-Mex / Tejano	Conjunto
+Tex-Mex / Tejano	Conjunto Progressive
+Tex-Mex / Tejano	New Mex
+Tex-Mex / Tejano	Tex-Mex
+Vocal	A cappella
+Vocal	Barbershop
+Vocal	Doo-wop
+Vocal	Gregorian Chant
+Vocal	Standards
+Vocal	Traditional Pop
+Vocal	Vocal Jazz
+Vocal	Vocal Pop
+World	Africa
+World	Afro-Beat
+World	Afro-Pop
+World	Asia
+World	Australia
+World	Cajun
+World	Calypso
+World	Caribbean
+World	Carnatic
+World	Celtic
+World	Celtic Folk
+World	Contemporary Celtic
+World	Coupé-décalé
+World	Dangdut
+World	Drinking Songs
+World	Drone
+World	Europe
+World	France
+World	Hawaii
+World	Hindustani
+World	Indian Ghazal
+World	Indian Pop
+World	Japan
+World	Japanese Pop
+World	Klezmer
+World	Mbalax
+World	Middle East
+World	North America
