@@ -1,0 +1,79 @@
+<div class="scrollable">
+  <h1 class="scrollable-header app-name  fb_sidebarheader">FanBase</h1>
+  <div class="scrollable-content  fb_sidebarcontent">
+    <div class="list-group fb_sidebar" ui-turn-off="uiSidebarLeft">
+      <a class="list-group-item" href="#/home">
+        <table>
+          <tr>
+            <td><i class="fa fa-home fa-2x"></i></td>
+            <td class="fb_sidebarText">Home Page</td>
+            <td><i class="fa fa-chevron-right pull-right"></i></td>
+          </tr>
+        </table>
+      </a>
+      <a class="list-group-item" href="#/radio">
+        <table>
+          <tr>
+            <td><i class="fa fa-volume-up fa-2x"></i></td>
+            <td class="fb_sidebarText">Fanbase Radio</td>
+            <td><i class="fa fa-chevron-right pull-right"></i></td>
+          </tr>
+        </table>
+      </a>
+      <a class="list-group-item" href="#/search">
+        <table>
+          <tr>
+            <td><i class="fa fa-search fa-2x"></i></td>
+            <td class="fb_sidebarText">Search Fanbase</td>
+            <td><i class="fa fa-chevron-right pull-right"></i></td>
+          </tr>
+        </table>
+      </a>
+      <a ng-hide="isLoggedOn()" class="list-group-item" href="#/login">
+        <table>
+          <tr>
+            <td><i class="fa fa-sign-in fa-2x"></i></td>
+            <td class="fb_sidebarText">Fanbase Log in</td>
+            <td><i class="fa fa-chevron-right pull-right"></i></td>
+          </tr>
+        </table>
+      </a>
+      <a ng-hide="isLoggedOn()" class="list-group-item" href="#/signup">
+        <table>
+          <tr>
+            <td><i class="fa fa-edit fa-2x"></i></td>
+            <td class="fb_sidebarText">Fanbase Signup</td>
+            <td><i class="fa fa-chevron-right pull-right"></i></td>
+          </tr>
+        </table>
+      </a>
+      <a ng-show="isLoggedOn()" class="list-group-item" href="#/profile">
+        <table>
+          <tr>
+            <td><i class="fa fa-universal-access fa-2x"></i></td>
+            <td class="fb_sidebarText">Member Profile</td>
+            <td><i class="fa fa-chevron-right pull-right"></i></td>
+          </tr>
+        </table>
+      </a>
+      <a ng-show="isLoggedOn()" class="list-group-item" href="#/performer">
+        <table>
+          <tr>
+            <td><i class="fa fa-music fa-2x"></i></td>
+            <td class="fb_sidebarText">Performer Profiles</td>
+            <td><i class="fa fa-chevron-right pull-right"></i></td>
+          </tr>
+        </table>
+      </a>
+      <a ng-show="isLoggedOn()" class="list-group-item" href="#/logout">
+        <table>
+          <tr>
+            <td><i class="fa fa-sign-out fa-2x"></i></td>
+            <td class="fb_sidebarText">Log out</td>
+            <td><i class="fa fa-chevron-right pull-right"></i></td>
+          </tr>
+        </table>
+      </a>
+    </div>
+  </div>
+</div>

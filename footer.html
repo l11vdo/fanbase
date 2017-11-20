@@ -1,0 +1,36 @@
+<div class="navbar navbar-app navbar-absolute-bottom">
+        <div ng-show="footerButton.radio=='N'" style="height: 10px; background-color: #1C18E4; border:none; margin: -1px 0px 0px 0px; font-size: 0;"></div>
+        <table class="fb_navbuttons">
+                <tr>
+                        <td>
+                                <a class="fb_btn_footer" data-ng-disabled="footerButton.back=='N'" ng-click="back()">
+                                        <i class="fa fa-arrow-circle-left fa-2x"></i>
+                                </a>
+                        </td>
+                        <td>
+                                <a class="fb_btn_footer" data-ng-disabled="footerButton.home=='N'" ng-click="home()">
+                                        <i class="fa fa-home fa-2x"></i>
+                                </a>
+                        </td>
+                        <td>
+                                <a ng-if="footerButton.save == 'N'" class="fb_btn_footer" type="submit" data-ng-disabled="footerButton.save=='N'">
+                                        <i class="fa fa-save fa-2x"></i>
+                                </a>
+                                <a ng-if="footerButton.save == 'Y'" class="fb_btn_footer" ng-click="save()" type="submit" data-ng-disabled="footerButton.save=='N'">
+                                        <i class="fa fa-save fa-2x fb_saveenabled"></i>
+                                </a>
+
+                        </td>
+                        <td>
+                                <a class="fb_btn_footer" ng-click="radio()" data-ng-disabled="footerButton.radio=='N'">
+                                        <i class="fa fa-volume-up fa-2x"></i>
+                                </a>
+                        </td>
+                        <td>
+                                <a class="fb_btn_footer" ng-click="search()" data-ng-disabled="footerButton.search=='N'">
+                                        <i class="fa fa-search fa-2x"></i>
+                                </a>
+                        </td>
+                </tr>
+        </table>
+</div>
