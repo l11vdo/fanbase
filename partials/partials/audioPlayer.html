@@ -1,0 +1,55 @@
+<div class="fb_audioplayer">
+
+    <div class="fb_audiobase" seek-track>
+        <div class="fb_audioload" ng-style="{width : ( progress + '%' ) }">&nbsp;</div>
+    </div>
+
+    <table class="fb_audiobuttons">
+        <tr>
+            <td ng-show="nowPlaying">
+                <a id="fb_pause" href="javascript:void(0)" ng-click="audioButtonClick('pause');" class="fb_btn_audio">
+                    <i class="fa fa-pause fa-lg fa-2x"></i>
+                </a>
+            </td>
+            <td ng-hide="nowPlaying">
+                <a id="fb_play" href="javascript:void(0)" ng-click="audioButtonClick('play');" class="fb_btn_audio">
+                    <i class="fa fa-play fa-lg fa-2x"></i>
+                </a>
+            </td>
+            <td>
+                <a id="fb_stop" href="javascript:void(0)" ng-click="audioButtonClick('stop');" class="fb_btn_audio" data-ng-disabled="!nowPlaying">
+                    <i class="fa fa-stop fa-lg fa-2x"></i>
+                </a>
+            </td>
+            <td>
+                <a id="fb_prev" href="javascript:void(0)" ng-click="audioButtonClick('previous');" class="fb_btn_audio">
+                    <i class="fa fa-step-backward fa-lg fa-2x"></i>
+                </a>
+            </td>
+            <td>
+                <a id="fb_next" href="javascript:void(0)" ng-click="audioButtonClick('next');" class="fb_btn_audio">
+                    <i class="fa fa-step-forward fa-lg fa-2x"></i>
+                </a>
+            </td>
+            <td>
+                <a id="fb_playlist" href="javascript:void(0)" class="fb_btn_audio" ng-click="showplayList=!showplayList">
+                    <i class="fa fa-navicon fa-lg fa-2x"></i>
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="fb_playListContainer" ng-show="showplayList">
+    <div class="fb_audioplaylist">
+        <table>
+            <tr ng-repeat="song in playlist">
+                <td>
+                    <span ng-if="currentPlaying.id==song.id"><i class="fa fa-caret-right"></i></span>
+                </td>
+                <td>
+                    <a play-from-playlist="song" class="fb_audiolink" ng-click="closePlayList();">{{song.artist}}, {{song.title}}</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

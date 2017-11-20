@@ -1,0 +1,47 @@
+<div ng-controller="bookingCntrl" class="fb_newsitem">
+    <form name="editBooking" role="form" ng-init="init();">
+        <legend>{{performerName()}} - Booking inquiry</legend>
+        <br />
+        <div class="form-group has-success has-feedback">
+            <label>When?</label>
+            <input type="date" class="form-control" placeholder="Booking Date (if known)" name="fb_date" ng-model="booking.fb_date" />
+        </div>
+      
+        <div class="form-group has-success has-feedback">
+            <label>Event type</label>
+            <select class="form-control" placeholder="What type of event is this?" name="fb_type" ng-model="booking.fb_type" ng-options="x for x in booking_types">
+            </select>
+        </div>
+
+        <div class="form-group has-success has-feedback">
+            <label>Contact Name</label>
+            <input type="text"
+                   class="form-control"
+                   placeholder="Your last name"
+                   name="fb_contact_name"
+                   ng-model="booking.fb_contact_name"
+                   required/>
+        </div>
+    
+        <div class="form-group has-success has-feedback">
+            <label>Contact Details</label>
+            <input type="text"
+                   class="form-control"
+                   placeholder="Mobile / email..."
+                   name="fb_contact_details"
+                   ng-model="booking.fb_contact_detail"
+                   required/>
+        </div>
+        
+        <div class="form-group has-success has-feedback">
+            <label>Description</label>
+            <textarea type="text" class="form-control fb_text" placeholder="Tell us more" name="fb_descr" ng-model="booking.fb_descr" required></textarea>
+        </div>
+    
+        <div class="form-group has-success has-feedback">
+            <label>External Link</label>
+            <input type="text" class="form-control" placeholder="URL / Address for venue or event" name="fb_link" ng-model="booking.fb_link" />
+        </div>
+    </form>
+    <br><br>
+</div>

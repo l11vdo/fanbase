@@ -1,0 +1,140 @@
+<div ng-controller="performerCntrl" ng-init="initSummary();">
+    <div class="fb_summary fb_pad">
+        <div id="fb_performer_title" class="fb_performer_title">{{performerName()}}</div>
+        <div style="text-align: center;">
+            <img id="fb_performer_photo" ng-src="{{performer.fb_photo}}"></img>
+        </div>
+        <br>
+        <table style="width:100%;">
+            <tr>
+                <td style="width:50%;padding:3px;">
+                    <div class="btn btn-default btn-block fb_btn_prf" ng-click="bookingInquiry();">
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="text-align:center;">
+                                    <i class="fa fa-question-circle fa-lg text-primary fb_btn_Glyph"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;">
+                                    <span class="fb_btn_Label">Booking inquiry</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+                <td style="width:50%;padding:3px;">
+                    <div class="btn btn-default btn-block fb_btn_prf" ng-click="addNewsItem();">
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="text-align:center;">
+                                    <i class="fa fa-newspaper-o fa-lg text-primary fb_btn_Glyph"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;">
+                                    <span class="fb_btn_Label">News story</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <br />
+        <span class="fb_searchLabel">Act name</span>&nbsp;<span>{{performer.fb_name}}</span><br>
+        <span class="fb_searchLabel">Act type</span>&nbsp;<span>{{performer.fb_type}}</span><br>
+        <span class="fb_searchLabel">Act status</span>&nbsp;<span>{{performer.fb_status}}</span>
+        <br />
+
+        <br />
+        <span class="fb_searchLabel">Strapline</span>
+        <span>{{performer.fb_strapline}}</span><br><br>
+        <span class="fb_searchLabel">About {{performer.fb_name}}</span><br>
+        <span>{{performer.fb_descr}}</span><br>
+        <br />
+
+        <span class="fb_searchLabel">Locations for {{performer.fb_name}}</span>
+        <div ng-controller="locationCntrl" class="form-group has-success has-feedback">
+            <table class="table">
+                <tr ng-repeat="location in locationList" class="form-group">
+                    <td>
+                        <span>{{location.fb_type}}</span>
+                    </td>
+                    <td>
+                        <span ng-if="location.fb_type=='County'">{{location.fb_county}}</span>
+                        <span ng-if="location.fb_type=='Town'">{{location.fb_town}}</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <span class="fb_searchLabel">Media Links for {{performer.fb_name}}</span>
+        <div ng-controller="weblinkCntrl" class="form-group has-success has-feedback">
+            <table class="table">
+                <tr ng-repeat="weblink in weblinkList">
+                    <td>
+                        <span>{{weblink.fb_type}}</span>
+                    </td>
+                    <td>
+                        <span><a href="javascript:void(0)" class="text-primary" ng-click="openLink(weblink.fb_link);">{{weblink.fb_descr}}</a></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <span class="fb_searchLabel">Tracks for {{performer.fb_name}}</span>
+        <div ng-controller="trackCntrl">
+            <table class="table">
+                <tr ng-repeat="track in trackList">
+                    <td>
+                        <i ng-show="track.fb_url_type=='External'" class="fa fa-external-link fa-sm text-primary"></i>
+                        <i ng-show="track.fb_url_type=='Upload'" class="fa fa-upload fa-sm text-primary"></i> &nbsp;&nbsp;
+                        <span>{{track.fb_title}}</span>
+                    </td>
+                    <td>
+                        <a ng-hide="track.isPlaying" href="javascript:void(0)" ng-click="buttonPlay($index);"><i class="fa fa-play-circle fa-lg fa-2x text-primary"></i></a>
+                        <a ng-show="track.isPlaying" href="javascript:void(0)" ng-click="buttonStop($index);"><i class="fa  fa-stop-circle fa-lg fa-2x text-primary"></i></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <span class="fb_searchLabel">News stories for {{performer.fb_name}}</span>
+        <div ng-controller="newsCntrl" ng-init="getNewsItemList();">
+            <table class="table">
+                <tr ng-repeat="x in newsItemList" ng-click="editNewsItem($index);">
+                    <td style="width:72px; padding: 3px;">
+                        <div style="text-align: center;">
+                            <img id="newsphoto" ng-src="{{x.fb_photo}}"></img>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="text-align: left; padding: 3px;">
+                            <span style="font-weight: bold">{{x.fb_headline}}</span><br>
+                            <span>{{x.fb_type}}</span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <span class="fb_searchLabel">Members of {{performer.fb_name}}</span>
+        <div ng-controller="membersCntrl">
+            <table class="table fb_membersummary">
+                <tr data-ng-repeat="member in memberList">
+                    <td>
+                        <img class="fb_member_image" ng-src="{{member.fb_photo}}" alt="{{member.fb_photo}}">
+                    </td>
+                    <td>
+                        <span>{{member.fb_name}}</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<br><br><br>
+
+</div>

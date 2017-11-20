@@ -1,0 +1,42 @@
+<div ng-controller="membersCntrl" ng-init="get()">
+  <form name="membersForm" role="form">
+    <legend>Members of {{performerName()}}</legend>
+    <br />
+
+    <table class="fb_member_list">
+      <tr data-ng-repeat="member in memberList" class="form-group">
+        <td>
+          <checkbox large ng-hide="member.fb_owner=='Y'" ng-model="member.fb_selected" class="btn-default"></checkbox>
+        </td>
+        <td>
+          <img ng-src="{{member.fb_photo}}" class="fb_member_image" alt="{{member.fb_photo}}">
+        </td>
+        <td>
+          <span>{{member.fb_name}}</span>
+        </td>
+      </tr>
+    </table>
+
+    <br />
+
+    <table class="sublistButtons">
+      <tr>
+        <td>
+          <a href="javascript:void(0)" ui-turn-on="modalsearch"><i class="fa fa-plus-circle fa-lg fa-2x text-success"></i></a>
+        </td>
+        <td ng-show="anySelected()==true">
+          <a href="javascript:void(0)" ng-click="remove();"><i class="fa fa-minus-circle fa-lg fa-2x text-danger"></i></a>
+        </td>
+      </tr>
+    </table>
+
+    <br />
+    <br />
+
+  </form>
+
+  <div ui-content-for="modals">
+    <div ng-include="'partials/searchMembers.html'"></div>
+  </div>
+
+</div>

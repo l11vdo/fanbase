@@ -1,0 +1,74 @@
+<div ng-controller="identityCntrl" ng-init="get()">
+  <form name="identityForm" role="form">
+    <fieldset>
+      <legend>{{profile_name()}} - ID details</legend>
+
+        <div class="form-group has-success has-feedback">
+          <label>Title</label>
+          <select class="form-control"
+                  placeholder="Title / prefix"
+                  name="fb_title"
+                  ng-model="identity.fb_title"
+                  ng-options="x for x in titles"
+                  required focus>
+          </select>
+        </div>
+
+        <div class="form-group has-success has-feedback">
+          <label>First Name</label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="Your first name"
+                 name="fb_name_first"
+                 ng-model="identity.fb_name_first"
+                 required/>
+        </div>
+
+        <div class="form-group has-success has-feedback">
+          <label>Middle Name(s)</label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="Your middle name(s)"
+                 name="fb_name_middle"
+                 ng-model="identity.fb_name_middle"
+                 />
+        </div>
+
+        <div class="form-group has-success has-feedback">
+          <label>Last Name(s)</label>
+          <input type="text"
+                 class="form-control"
+                 placeholder="Your last name"
+                 name="fb_name_last"
+                 ng-model="identity.fb_name_last"
+                 required/>
+        </div>
+
+        <div class="form-group has-success has-feedback">
+          <label>Birth Date</label>
+          <input type="date"
+                 class="form-control"
+                 placeholder="Birth Date"
+                 name="fb_birth_date"
+                 ng-model="identity.fb_birth_date"
+                 />
+        </div>
+
+        <div class="form-group has-success has-feedback">
+          <label>Gender</label>
+          <select class="form-control"
+                  placeholder="Gender"
+                  name="fb_gender"
+                  ng-model="identity.fb_gender"
+                  ng-options="x for x in genders">
+          </select>
+        </div>
+
+   <br />
+   <br />
+   <br />
+
+    </fieldset>
+
+  </form>
+  </div>

@@ -1,0 +1,50 @@
+<div ng-controller="newsCntrl" class="fb_newsitem">
+    <form name="editNewsDetail" role="form" ng-hide="loadPhoto">
+        <legend>{{performerName()}} - News Details</legend>
+        <fieldset>
+            <div class="form-group has-success has-feedback">
+                <label>Event Date</label>
+                <input type="date" class="form-control" placeholder="Event Date" name="fb_date" ng-model="newsdetail.fb_date" required />
+            </div>
+
+            <div class="form-group has-success has-feedback">
+                <label>News Headline</label>
+                <input type="text" class="form-control" placeholder="News headline" name="fb_headline" ng-model="newsdetail.fb_headline" required />
+            </div>
+
+            <div class="form-group has-success has-feedback">
+                <label>Description</label>
+                <textarea type="text" class="form-control fb_text" placeholder="Tell us more" name="fb_descr" ng-model="newsdetail.fb_descr" required></textarea>
+            </div>
+
+            <div class="form-group has-success has-feedback">
+                <label>External Link</label>
+                <input type="text" class="form-control" placeholder="External URL / Address" name="fb_link" ng-model="newsdetail.fb_link" />
+            </div>
+
+            <div class="form-group has-success has-feedback">
+                <label>News Photo</label><br>
+                <div class="fb_newsPhoto">
+                    <img ng-src="{{newsdetail.fb_photo}}"></img>
+                </div>
+                <div class="btn btn-default btn-block fb_btn_menu" ng-click="photo();"  data-ng-disabled="editNewsDetail.$invalid">
+                    <table style="width:100%;">
+                        <tr>
+                            <td style="width:30%;">
+                                <i class="fa fa-camera-retro fa-lg fa-2x text-primary fb_profileGlyph"></i>
+                            </td>
+                            <td style="text-align:left;">
+                                <span class="fb_profileLabel">Add photo / image</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </fieldset>
+
+        <br />
+        <br />
+
+    </form>
+    <div ng-include="'partials/photo.html'" ng-show="loadPhoto" ng-class="{'slide-left': fb_transition==='slide-left', 'slide-right': fb_transition==='slide-right'}"></div>
+</div>

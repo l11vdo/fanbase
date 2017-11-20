@@ -1,0 +1,39 @@
+<div class="fb-scrollable fb_pad">
+  <div class="scrollable-content section">
+      <div ui-content-for="title" ng-init="setCurrentProcess('profile');">
+        <span>{{fb_bannerTitle}}</span>
+      </div>
+
+      <br />
+      <div ng-if="currentForm.indexOf('profile.html')>0" ng-init="initProfile()" ng-class="{'slide-left': fb_transition==='slide-left', 'slide-right': fb_transition==='slide-right'}">
+        <legend>{{profile_name()}} - Profile</legend>
+        <div ng-repeat="x in navigation" class="col-centered text-center" style="padding:10px;">
+          <table style="width:100%;">
+            <tr ng-show="$index==0 || securityLoaded()">
+              <td style="width:85%;">
+                <div class="btn btn-default btn-block fb_btn_menu" ng-click="setPersPartial($index);">
+                  <table style="width:100%;">
+                    <tr>
+                      <td style="width:30%;">
+                        <i class="fa {{x.glyph}} fa-lg fa-2x fb_profileGlyph"></i>
+                      </td>
+                      <td style="text-align:left;">
+                        <span class="fb_profileLabel">{{x.title}}</span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+              <td>
+                <div ng-bind-html="x.html" class="text-left" style="width:15%; float:right; margin-right: 5px;"></div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <br />
+        <br />
+        <br />
+      </div>
+      <div ng-if="currentForm.indexOf('profile.html')<0" ng-include="currentForm" ng-class="{'slide-left': fb_transition==='slide-left', 'slide-right': fb_transition==='slide-right'}"></div>
+  </div>
+</div>

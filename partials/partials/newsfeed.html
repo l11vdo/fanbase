@@ -1,0 +1,99 @@
+<div ng-controller="newsfeedCntrl" ng-init="getNews();" class="fb_news">
+    <div ng-repeat="x in fb_newsfeed" class="fb_newsfeed">
+        <div ng-if="x.fb_news_event=='Performer'" class="fb_news_section">
+            <div id="fb_news_headline">
+                <table>
+                    <tr>
+                        <td><img src='gifs/performer.gif'></td>
+                        <td><span>Big hand for new performer {{x.fb_name}}</span></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="fb_img_container">
+                <div class="fb_news_image" style="background-image:url('{{x.fb_photo}}');">
+                    <a class="fb_news_img_link" ng-click="showSummary($index);">
+                        <i class="fa fa-list fa-5x"></i>
+                    </a>
+                </div>
+                <div id="fb_bar"></div>
+            </div>
+            <div id="{{ 'news' + $index }}" class="fb_news_item">
+                <span class="fb_searchLabel">Name</span><span class="fb_searchText wrapword"><strong>{{x.fb_name}}</strong></span>
+                <br>
+                <span class="fb_searchLabel">Type</span><span class="fb_searchText wrapword">{{x.fb_type}}</span>
+                <br>
+                <span class="fb_searchLabel">Joined</span><span class="fb_searchText wrapword">{{x.fb_added_dt}}</span>
+                <br>
+                <span class="fb_searchLabel">Tracks</span><span style="margin-right: 10px;" class="fb_searchText wrapword">{{x.fb_track_count}}</span>
+                <span class="fb_searchLabel">Media Links</span><span class="fb_searchText wrapword">{{x.fb_link_count}}</span>
+            </div>
+            <div ng-if="x.fb_descr!=''" id="fb_news_article" class="wrapword">
+                <span class="fb_searchLabel">About {{x.fb_name}}</span><br>
+                <span class="fb_searchText wrapword">{{x.fb_descr}}</span>
+            </div>
+        </div>
+        <div ng-if="x.fb_news_event=='Track'" class="fb_news_section">
+            <div id="fb_news_headline">
+                <table>
+                    <tr>
+                        <td><img src='gifs/track.gif'></td>
+                        <td><span>{{x.fb_name}} added new radio track {{x.fb_title}}</span></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="fb_img_container">
+                <div id="{{ 'news' + $index }}" class="fb_news_image" style="background-image:url('{{x.fb_photo}}');">
+                    <a class="fb_news_img_link" ng-hide="x.trackPlaying" href="javascript:void(0)" ng-click="buttonPlay($index);">
+                        <i class="fa fa-play fa-5x"></i>
+                    </a>
+                    <a class="fb_news_img_link" ng-show="x.trackPlaying" href="javascript:void(0)" ng-click="buttonStop($index);">
+                        <i class="fa fa-stop fa-5x"></i>
+                    </a>
+                </div>
+                <div id="fb_trackBar">
+                    <div id="{{ 'prog' + $index }}" class="fb_progBar"></div>
+                </div>
+            </div>
+            <div class="fb_news_item">
+                <span class="fb_searchLabel">Title</span><span class="fb_searchText wrapword"><strong>{{x.fb_title}}</strong></span>
+                <br>
+                <span class="fb_searchLabel">Performer</span><span class="fb_searchText wrapword">{{x.fb_name}}</span>
+                <br>
+                <span class="fb_searchLabel">Type</span><span class="fb_searchText wrapword">{{x.fb_track_type}}</span>
+                <br>
+                <span class="fb_searchLabel">Added</span><span class="fb_searchText wrapword">{{x.fb_added_dt}}</span>
+            </div>
+            <div ng-if="x.fb_descr!=''" id="fb_news_article" class="wrapword">
+                <span class="fb_searchLabel">About {{x.fb_title}}</span><br>
+                <span>{{x.fb_descr}}</span>
+            </div>
+        </div>
+        <div ng-if="x.fb_news_event=='Media'" class="fb_news_section">
+            <div id="fb_news_headline">
+                <table>
+                    <tr>
+                        <td><img src='gifs/media.gif'></td>
+                        <td><span>{{x.fb_name}} added new media link {{x.fb_title}}</span></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="fb_img_container">
+                <div class="fb_news_image" style="background-image:url('{{x.fb_photo}}');">
+                    <a class="fb_news_img_link" ng-click="openMediaLink($index);">
+                        <i class="fa fa-external-link fa-5x"></i>
+                    </a>
+                </div>
+                <div id="fb_bar"></div>
+            </div>
+            <div id="fb_bar"></div>
+            <div class="fb_news_item">
+                <span class="fb_searchLabel">Description</span><span class="fb_searchText wrapword"><strong>{{x.fb_descr}}</strong></span>
+                <br>
+                <span class="fb_searchLabel">Type</span><span class="fb_searchText wrapword">{{x.fb_type}}</span>
+                <br>
+                <span class="fb_searchLabel">Added</span><span class="fb_searchText wrapword">{{x.fb_added_dt}}</span>
+            </div>
+        </div>
+    </div>
+</div>
