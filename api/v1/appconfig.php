@@ -22,8 +22,8 @@
  define('REL_BOOKING', 131);
  define('REL_PERF_BOOKING', 132);
  
- define('PHOTO_REPOSITORY', 'photos/');
- define('AUDIO_REPOSITORY', 'audio/');
+ define('PHOTO_REPOSITORY', '../fanbase_content/photos/');
+ define('AUDIO_REPOSITORY', '../fanbase_content/audio/');
  define('MEMBER_PREFIX', 'avt');
  define('PERFORMER_PREFIX', 'prf');
  define('TRACK_PREFIX', 'trk');
