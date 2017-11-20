@@ -12,6 +12,7 @@ $app = new \Slim\Slim();
 $user_id = NULL;
 
 include_once '../config.php';
+include_once 'appconfig.php';
 require_once 'fanbase.php';
 
 /**
